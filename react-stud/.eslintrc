@@ -9,9 +9,9 @@
     "plugin:prettier/recommended"
   ],
   "settings": {
-    "import/extensions": [".js", ".ts", ".jsx", ".tsx"],
+    "import/extensions": [".ts", ".tsx"],
     "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx"],
+      "@typescript-eslint/parser": [".ts", ".tsx"]
     },
     "import/resolver": {
       "node": {
@@ -21,9 +21,12 @@
   },
   "rules": {
     "semi":[2, "always"],
+    "no-use-before-define": "off",
     "import/prefer-default-export": "off",
-    "react/jsx-filename-extension": [1, { "extensions": ".tsx"}],
+    "import/extensions": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx"]}],
     "react/jsx-props-no-spreading": "off",
+    "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
     "sort-imports": ["error", {
         "ignoreCase": true,
