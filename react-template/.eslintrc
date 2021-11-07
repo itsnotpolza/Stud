@@ -1,0 +1,31 @@
+{
+  "parser": "@babel/eslint-parser",
+  "extends": [
+    "prettier"
+  ],
+  "settings": {
+    "import/extensions": [".js", ".jsx"],
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".css"]
+      }
+    }
+  },
+  "rules": {
+    "semi":[2, "always"],
+    "no-use-before-define": "off",
+    "import/prefer-default-export": "off",
+    "import/extensions": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "sort-imports": ["error", {
+        "ignoreCase": true,
+        "ignoreDeclarationSort": true,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": ["all", "single", "multiple", "none"],
+        "allowSeparatedGroups": true
+    }],
+    "@typescript-eslint/no-var-requires": "off"
+  }
+}
