@@ -33,3 +33,9 @@ water.doesThisMakeMeHappy();
 const fanta = new drink(true);
 fanta.doesThisMakeMeHappy();
 
+//copying using Object.assign
+const testObj3 = {};
+
+Object.assign(testObj3, testObj1, fanta);
+
+console.log(testObj3);

@@ -1,7 +1,10 @@
 {
   "parser": "@babel/eslint-parser",
   "extends": [
-    "prettier"
+    "prettier",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime"
   ],
   "settings": {
     "import/extensions": [".js", ".jsx"],
@@ -9,6 +12,9 @@
       "node": {
         "extensions": [".js", ".jsx", ".css"]
       }
+    },
+    "react": {
+      "version": "detect"
     }
   },
   "rules": {
@@ -27,5 +33,9 @@
         "allowSeparatedGroups": true
     }],
     "@typescript-eslint/no-var-requires": "off"
+  },
+  "env": {
+      "browser": true,
+      "node": true
   }
 }
