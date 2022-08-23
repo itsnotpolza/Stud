@@ -62,3 +62,21 @@ type StringOrNull = OrNull<{ strOrNull: string, numOrNull: number }>
 type Includes<X, XS> = XS extends [infer head, ...infer tail]
     ? head extends X ? true : Includes<tail, XS> 
     : false
+
+type Name = 'Bob' | 'Alice'
+
+type AnyNameObject = Name extends any ? { name: Name } : never
+    // {name: 'Alice'} | {name: 'Bob'}
+
+
+// So an example would be taking a union of type: { foo: 'a' } | { foo: 'b' }
+// and converting it to: {a: { foo: 'a' }, b: { foo: 'b' }}
+
+type IndexObj<
+T extends Record<PropertyKey, any>,
+TKey extends keyof T,
+> = {
+[K in T[TKey]]: Extract<T, Record<TKey, K>>
+}
+
+type check = IndexObj<{ a: '1' } | { a: '2' } | { a: '3' }, 'a'>
